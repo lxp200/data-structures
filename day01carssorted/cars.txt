@@ -1,0 +1,11 @@
+Toyota Corolla;1.8;2000
+Ford Mustang;5.0;2019
+Honda Accord;2.0;2021
+Chevrolet Camaro;6.2;2022
+Tesla Model S;0.0;2023
+Audi A3;1.4;2023
+BMW 3 Series;2.0;2022
+Mercedes-Benz C-Class;2.0;2021
+Volkswagen Golf;1.5;2020
+Hyundai Elantra;2.0;2022
+Nissan Sentra;2.0;2021
