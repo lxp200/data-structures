@@ -50,7 +50,7 @@ public class Main {
         parking.sort(Comparator.comparing(Car::getProdYear).thenComparing(Car::getMakeModel));
         System.out.println("\nCars sorted by prodYear then makeModel:");
         parking.forEach(System.out::println);
-        
+
     }
 
     static void readDataFromFile() {
