@@ -1,6 +1,6 @@
 public class LinkedListArrayOfStrings {
 
-    private class Container {
+    private static class Container {
         Container next;
         String value;
 
@@ -16,11 +16,10 @@ public class LinkedListArrayOfStrings {
         Container newContainer = new Container(value);
         if (start == null) {
             start = newContainer;
-            end = newContainer;
         } else {
             end.next = newContainer;
-            end = newContainer;
         }
+        end = newContainer;
         size++;
     }
 
@@ -101,13 +100,13 @@ public class LinkedListArrayOfStrings {
     @Override
     public String toString() {
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
         Container current = start;
         while (current != null) {
-            result += current.value + " ";
+            result.append(current.value).append(" ");
             current = current.next;
         }
-        return result;
+        return result.toString();
     }
 
     public String[] toArray() {

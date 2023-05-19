@@ -59,6 +59,8 @@ class CustomHashMapStringStringTest {
     void getAllKeyValPairs() {
         map.putValue("Key1", "Value1");
         map.putValue("Key2", "Value2");
+
+        @SuppressWarnings("unchecked")
         Pair<String, String>[] expected = new Pair[]{
                 new Pair<>("Key1", "Value1"),
                 new Pair<>("Key2", "Value2")

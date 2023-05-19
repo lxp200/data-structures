@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 public class CustomHashMapStringString {
 
-    private class Container {
+    private static class Container {
         Container next;
         String key;
         String value;
@@ -14,7 +14,7 @@ public class CustomHashMapStringString {
         }
     }
 
-    private Container[] hashTable = new Container[5];
+    private final Container[] hashTable = new Container[5];
     private int totalItems = 0;
 
     private int computeHashValue(String key) {
@@ -86,7 +86,7 @@ public class CustomHashMapStringString {
             while (current.next != null && !current.next.key.equals(key)) {
                 current = current.next;
             }
-            if (current.next != null && current.next.key.equals(key)) {
+            if (current.next != null) {
                 current.next = current.next.next;
             } else {
                 throw new KeyNotFoundException("Key not found: " + key);
@@ -149,6 +149,6 @@ public class CustomHashMapStringString {
             }
             sb.append(pair.getKey()).append(" => ").append(pair.getValue());
         }
-        return "[" + sb.toString() + "]";
+        return "[" + sb + "]";
     }
 }

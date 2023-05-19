@@ -2,12 +2,12 @@ import java.util.HashMap;
 
 class FibCached {
 
-    private HashMap<Integer, Long> fibsCached = new HashMap<>();
+    private final HashMap<Integer, Long> fibsCached = new HashMap<>();
     private int fibsCompCount = 2;
 
-    FibCached() {
-        fibsCached.put(0, 0L); // #0
-        fibsCached.put(1, 1L); // #1
+    public FibCached() {
+        fibsCached.put(0, 0L);
+        fibsCached.put(1, 1L);
     }
 
     public long getNthFib(int n) {
@@ -20,11 +20,18 @@ class FibCached {
     private void computeNthFib(int n) {
         for (int i = fibsCompCount; i <= n; i++) {
             fibsCached.put(i, fibsCached.get(i - 1) + fibsCached.get(i - 2));
+
+            // print the actual formula to the console
+            System.out.println("F(" + i + ") " +
+                    "= F(" + (i - 1) + ") + F(" + (i - 2) + ") " +
+                    "= " + fibsCached.get(i - 1) + " + " + fibsCached.get(i - 2) + " " +
+                    "= " + fibsCached.get(i));
+
             fibsCompCount++;
         }
     }
 
-    public int getCountOfFibsComputed() {
+    public int getFibsCompCount() {
         return fibsCompCount;
     }
 
@@ -38,18 +45,5 @@ class FibCached {
             sb.append(fibsCached.get(i));
         }
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-
-        FibCached fibCached = new FibCached();
-
-        System.out.println(fibCached.getNthFib(10));  // prints 55
-        System.out.println(fibCached.getCountOfFibsComputed());  // prints 11
-        System.out.println(fibCached);  // prints all cached fibonacci numbers
-
-        System.out.println(fibCached.getNthFib(20));  // prints 6765
-        System.out.println(fibCached.getCountOfFibsComputed());  // prints 21
-        System.out.println(fibCached);  // prints all cached fibonacci numbers
     }
 }
