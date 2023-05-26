@@ -16,7 +16,7 @@ public class Main {
         // Retrieve and print some values
         try {
             System.out.println("Value of 'banana': " + tree.getValByKey("banana"));
-            System.out.println("Value of 'date': " + tree.getValByKey("date"));
+            System.out.println("Value of 'platypus': " + tree.getValByKey("platypus"));
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
